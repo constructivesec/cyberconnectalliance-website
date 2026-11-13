@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyberConnect Alliance | Cybersecurity career guidance for students</title>
+<meta name="description" content="CyberConnect Alliance (CyCA) is an Indiana nonprofit helping high school and college students explore cybersecurity careers through forums, mentoring and capture-the-flag competitions.">
+<meta property="og:title" content="CyberConnect Alliance">
+<meta property="og:description" content="Helping high school and college students navigate cybersecurity careers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cyberconnectalliance.org/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b1f3a'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='%2322d3ee' text-anchor='middle'>CyCA</text></svg>">
+<style>
+  :root {
+    --navy: #0b1f3a;
+    --navy-2: #12305a;
+    --cyan: #22d3ee;
+    --cyan-dark: #0891b2;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --line: #e2e8f0;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  a { color: var(--cyan-dark); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(11, 31, 58, 0.96);
+    backdrop-filter: blur(6px);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
+  .brand img { height: 36px; width: auto; }
+  .brand .mark {
+    display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--cyan); color: var(--navy); font-size: 13px; font-weight: 800;
+  }
+  .nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  .nav ul a { color: #cbd5e1; text-decoration: none; font-size: 15px; }
+  .nav ul a:hover { color: #fff; }
+
+  /* Hero */
+  .hero {
+    background:
+      radial-gradient(circle at 85% 20%, rgba(34, 211, 238, 0.18), transparent 45%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff;
+    padding: 96px 0 104px;
+  }
+  .eyebrow { color: var(--cyan); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; margin: 0 0 12px; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.1; margin: 0 0 20px; max-width: 760px; }
+  .hero p.lead { font-size: 19px; color: #cbd5e1; max-width: 640px; margin: 0 0 32px; }
+  .btn {
+    display: inline-block; padding: 13px 22px; border-radius: 8px;
+    font-weight: 600; text-decoration: none; margin: 0 10px 10px 0;
+  }
+  .btn-primary { background: var(--cyan); color: var(--navy); }
+  .btn-primary:hover { background: #67e8f9; }
+  .btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: #fff; }
+  .btn-ghost:hover { border-color: #fff; }
+
+  /* Sections */
+  section { padding: 80px 0; }
+  section h2 { font-size: 32px; margin: 0 0 12px; color: var(--navy); }
+  .section-intro { color: var(--muted); max-width: 680px; margin: 0 0 40px; font-size: 17px; }
+  .grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 26px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 19px; color: var(--navy); }
+  .card p { margin: 0; color: var(--muted); }
+  .icon {
+    width: 42px; height: 42px; border-radius: 10px; margin-bottom: 14px;
+    display: grid; place-items: center; background: #ecfeff; color: var(--cyan-dark);
+  }
+  .alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  /* Questions list */
+  .questions { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 8px; }
+  .q { border-left: 3px solid var(--cyan); padding: 4px 0 4px 16px; font-weight: 600; color: var(--navy); }
+
+  /* Event */
+  .event {
+    display: grid; gap: 30px; grid-template-columns: 1.3fr 1fr; align-items: center;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #fff; border-radius: 16px; padding: 44px;
+  }
+  .event h2 { color: #fff; }
+  .event p { color: #cbd5e1; }
+  .event dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; }
+  .event dt { color: var(--cyan); font-weight: 600; }
+  .event dd { margin: 0; }
+
+  /* Team */
+  .team .card { text-align: left; }
+  .avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--navy); color: var(--cyan);
+    display: grid; place-items: center; font-weight: 700; margin-bottom: 14px;
+  }
+  .role { color: var(--cyan-dark); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .card a.li { font-size: 14px; text-decoration: none; }
+
+  /* Contact */
+  .contact { text-align: center; }
+  .contact .section-intro { margin-left: auto; margin-right: auto; }
+
+  footer { background: var(--navy); color: #94a3b8; padding: 36px 0; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer a { color: #cbd5e1; }
+
+  @media (max-width: 760px) {
+    .nav ul { display: none; }
+    .event { grid-template-columns: 1fr; padding: 30px; }
+    section { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <!-- To use the approved logo: add logo.png to the repo and replace the span below with:
+           <img src="logo.png" alt="CyberConnect Alliance logo"> -->
+      <span class="mark">CyCA</span>
+      <span>CyberConnect Alliance</span>
+    </a>
+    <ul>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Indiana nonprofit</p>
+      <h1>Helping students find their path into cybersecurity.</h1>
+      <p class="lead">CyberConnect Alliance connects high school and college students with working cybersecurity professionals, so they can decide if the field is right for them and how to get started.</p>
+      <a class="btn btn-primary" href="#events">Upcoming event</a>
+      <a class="btn btn-ghost" href="#contact">Get involved</a>
+    </div>
+  </div>
+
+  <section id="mission">
+    <div class="wrap">
+      <h2>Our mission</h2>
+      <p class="section-intro">We are not a job fair. We offer honest advice and guidance from people who do this work every day, so students can make informed choices about their education and careers.</p>
+      <div class="questions">
+        <div class="q">Is a cybersecurity career right for me?</div>
+        <div class="q">Which pathways and specialties fit my interests?</div>
+        <div class="q">What education and certifications actually matter?</div>
+        <div class="q">How do I approach the industry and get my first role?</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" class="alt">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p class="section-intro">Our programs bring students, educators, and industry professionals together.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Career forums</h3>
+          <p>Fall and spring events with CISO and practitioner panels, career roadmaps, and time to talk with professionals one on one.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Capture the Flag</h3>
+          <p>Hands-on, beginner-friendly security challenges with a live leaderboard. A fun first taste of real cybersecurity work.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h3>Education pathways</h3>
+          <p>Guidance on degrees, career colleges, and certifications, and how each maps to different roles in the field.</p>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>Industry connections</h3>
+          <p>Partnerships with schools, employers, and public-sector organizations that open doors for students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <div class="event">
+        <div>
+          <p class="eyebrow">Inaugural event</p>
+          <h2>Cyber Career Connections Forum</h2>
+          <p>Our first student forum, hosted with Marian University. Panels with cybersecurity leaders, career pathway sessions, and a student Capture the Flag competition.</p>
+        </div>
+        <dl>
+          <dt>Date</dt><dd>Thursday, November 19, 2026</dd>
+          <dt>Host</dt><dd>Marian University, Indianapolis</dd>
+          <dt>Who</dt><dd>High school and college students</dd>
+          <dt>Details</dt><dd>Schedule and registration coming soon</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="alt team">
+    <div class="wrap">
+      <h2>Leadership</h2>
+      <p class="section-intro">Our volunteer board brings decades of experience in cybersecurity leadership, operations, and education.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="avatar">KD</div>
+          <h3>Karen Diggs</h3>
+          <div class="role">President</div>
+          <a class="li" href="https://www.linkedin.com/in/karen-diggs-bb09595/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="card">
+          <div class="avatar">BW</div>
+          <h3>Brian Worrell</h3>
+          <div class="role">Vice President</div>
+          <a class="li" href="https://www.linkedin.com/in/brian-worrell-8855036/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="card">
+          <div class="avatar">BQ</div>
+          <h3>Brian Quick</h3>
+          <div class="role">Secretary</div>
+          <a class="li" href="https://www.linkedin.com/in/bquick" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="card">
+          <div class="avatar">JR</div>
+          <h3>James Robinson</h3>
+          <div class="role">Treasurer</div>
+          <a class="li" href="https://www.linkedin.com/in/0xjames/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="card">
+          <div class="avatar">KF</div>
+          <h3>Kenneth Franklin</h3>
+          <div class="role">Head of Events and Industry Engagement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Get involved</h2>
+      <p class="section-intro">Are you an educator who wants to bring a forum to your school, a professional who wants to volunteer or speak, or an organization interested in sponsoring? We would love to hear from you.</p>
+      <a class="btn btn-primary" href="mailto:events@cyberconnectalliance.org">events@cyberconnectalliance.org</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 CyberConnect Alliance, Inc. An Indiana nonprofit corporation. 501(c)(3) status pending.</div>
+    <div><a href="mailto:events@cyberconnectalliance.org">Contact</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
