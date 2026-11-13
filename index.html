@@ -9,13 +9,14 @@
 <meta property="og:description" content="Helping high school and college students navigate cybersecurity careers.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cyberconnectalliance.org/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b1f3a'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='%2322d3ee' text-anchor='middle'>CyCA</text></svg>">
+<meta property="og:image" content="https://cyberconnectalliance.org/logo-full.png">
+<link rel="icon" type="image/png" href="logo.png">
 <style>
   :root {
-    --navy: #0b1f3a;
-    --navy-2: #12305a;
-    --cyan: #22d3ee;
-    --cyan-dark: #0891b2;
+    --navy: #072251;
+    --navy-2: #0d3a7a;
+    --cyan: #38a3ec;
+    --cyan-dark: #1084d7;
     --ink: #1e293b;
     --muted: #64748b;
     --bg: #f8fafc;
@@ -37,25 +38,20 @@
   /* Header */
   header {
     position: sticky; top: 0; z-index: 10;
-    background: rgba(11, 31, 58, 0.96);
-    backdrop-filter: blur(6px);
+    background: #fff;
+    border-bottom: 1px solid var(--line);
   }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; }
-  .brand img { height: 36px; width: auto; }
-  .brand .mark {
-    display: inline-grid; place-items: center;
-    width: 36px; height: 36px; border-radius: 8px;
-    background: var(--cyan); color: var(--navy); font-size: 13px; font-weight: 800;
-  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .brand img { height: 68px; width: auto; display: block; }
   .nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
-  .nav ul a { color: #cbd5e1; text-decoration: none; font-size: 15px; }
-  .nav ul a:hover { color: #fff; }
+  .nav ul a { color: var(--navy); text-decoration: none; font-size: 15px; font-weight: 600; }
+  .nav ul a:hover { color: #1084d7; }
 
   /* Hero */
   .hero {
     background:
-      radial-gradient(circle at 85% 20%, rgba(34, 211, 238, 0.18), transparent 45%),
+      radial-gradient(circle at 85% 20%, rgba(16, 132, 215, 0.35), transparent 45%),
       linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
     color: #fff;
     padding: 96px 0 104px;
@@ -67,8 +63,8 @@
     display: inline-block; padding: 13px 22px; border-radius: 8px;
     font-weight: 600; text-decoration: none; margin: 0 10px 10px 0;
   }
-  .btn-primary { background: var(--cyan); color: var(--navy); }
-  .btn-primary:hover { background: #67e8f9; }
+  .btn-primary { background: #1084d7; color: #fff; }
+  .btn-primary:hover { background: #38a3ec; }
   .btn-ghost { border: 1px solid rgba(255,255,255,0.35); color: #fff; }
   .btn-ghost:hover { border-color: #fff; }
 
@@ -85,7 +81,7 @@
   .card p { margin: 0; color: var(--muted); }
   .icon {
     width: 42px; height: 42px; border-radius: 10px; margin-bottom: 14px;
-    display: grid; place-items: center; background: #ecfeff; color: var(--cyan-dark);
+    display: grid; place-items: center; background: #e8f3fc; color: var(--cyan-dark);
   }
   .alt { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
@@ -135,10 +131,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <!-- To use the approved logo: add logo.png to the repo and replace the span below with:
-           <img src="logo.png" alt="CyberConnect Alliance logo"> -->
-      <span class="mark">CyCA</span>
-      <span>CyberConnect Alliance</span>
+      <img src="logo.png" alt="CyberConnect Alliance (CyCA)">
     </a>
     <ul>
       <li><a href="#mission">Mission</a></li>
@@ -153,7 +146,7 @@
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <p class="eyebrow">Indiana nonprofit</p>
+      <p class="eyebrow">Connecting students, educators &amp; the cybersecurity workforce</p>
       <h1>Helping students find their path into cybersecurity.</h1>
       <p class="lead">CyberConnect Alliance connects high school and college students with working cybersecurity professionals, so they can decide if the field is right for them and how to get started.</p>
       <a class="btn btn-primary" href="#events">Upcoming event</a>
@@ -217,11 +210,11 @@
         <div>
           <p class="eyebrow">Inaugural event</p>
           <h2>Cyber Career Connections Forum</h2>
-          <p>Our first student forum, hosted with Marian University. Panels with cybersecurity leaders, career pathway sessions, and a student Capture the Flag competition.</p>
+          <p>Our first student forum, with panels featuring cybersecurity leaders, career pathway sessions, and a student Capture the Flag competition.</p>
         </div>
         <dl>
-          <dt>Date</dt><dd>Thursday, November 19, 2026</dd>
-          <dt>Host</dt><dd>Marian University, Indianapolis</dd>
+          <dt>Date</dt><dd>Spring 2027 (TBD)</dd>
+          <dt>Location</dt><dd>Indiana (TBD)</dd>
           <dt>Who</dt><dd>High school and college students</dd>
           <dt>Details</dt><dd>Schedule and registration coming soon</dd>
         </dl>

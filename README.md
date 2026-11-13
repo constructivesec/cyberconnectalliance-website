@@ -5,7 +5,8 @@ Static single-page website for CyberConnect Alliance, Inc. (CyCA).
 ## Structure
 
 - `index.html` - the entire site (HTML and CSS in one file, no build step)
-- `logo.png` - add the board-approved logo here, then swap it into the header (see comment in `index.html`)
+- `logo.png` - header logo and favicon (CyCA logo without tagline)
+- `logo-full.png` - full logo with tagline, used for link previews
 
 ## Deploying
 
